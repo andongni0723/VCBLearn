@@ -1,0 +1,40 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://baqhyehqew0kp"
+path="res://.godot/imported/Taipei Sans TC Bold.ttf-669361ea373f65f86d60b26d79d38fc8.fontdata"
+
+[deps]
+
+source_file="res://font/Taipei Sans TC Bold.ttf"
+dest_files=["res://.godot/imported/Taipei Sans TC Bold.ttf-669361ea373f65f86d60b26d79d38fc8.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=true
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "新配置",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

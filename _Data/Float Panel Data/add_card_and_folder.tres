@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="FloatPanelResource" load_steps=7 format=3 uid="uid://bokonntanh0i3"]
+
+[ext_resource type="Script" uid="uid://cnlqc5x52tphx" path="res://Script/Data/button_data.gd" id="1_ohehv"]
+[ext_resource type="Script" uid="uid://jy3knfk4us3a" path="res://Script/Data/float_panel_resource.gd" id="1_ydbq3"]
+[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://_Assets/Action Copy.svg" id="2_blibm"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="3_blibm"]
+
+[sub_resource type="Resource" id="Resource_00cmw"]
+script = ExtResource("1_ohehv")
+texture = ExtResource("2_blibm")
+text = "單字卡"
+signal_name = "create_card"
+metadata/_custom_type_script = "uid://cnlqc5x52tphx"
+
+[sub_resource type="Resource" id="Resource_h0dew"]
+script = ExtResource("1_ohehv")
+texture = ExtResource("3_blibm")
+text = "文件夾"
+signal_name = "create_folder"
+metadata/_custom_type_script = "uid://cnlqc5x52tphx"
+
+[resource]
+script = ExtResource("1_ydbq3")
+type = 0
+button_data = Array[ExtResource("1_ohehv")]([SubResource("Resource_00cmw"), SubResource("Resource_h0dew")])
+metadata/_custom_type_script = "uid://jy3knfk4us3a"

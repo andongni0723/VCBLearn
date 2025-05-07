@@ -1,0 +1,59 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://86438e816syb"]
+
+[ext_resource type="FontFile" uid="uid://bux54qhsamoy7" path="res://font/Poppins-SemiBold.ttf" id="1_a2l2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470mv"]
+draw_center = false
+
+[sub_resource type="FontVariation" id="FontVariation_470mv"]
+base_font = ExtResource("1_a2l2q")
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsqoc"]
+bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
+bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_466ly"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52mx2"]
+bg_color = Color(0, 0, 0, 0.470588)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxFlat_470mv")
+Label/font_sizes/font_size = 48
+Label/fonts/font = SubResource("FontVariation_470mv")
+MarginContainer/constants/margin_bottom = 50
+MarginContainer/constants/margin_left = 50
+MarginContainer/constants/margin_right = 50
+MarginContainer/constants/margin_top = 50
+MiniLabel/base_type = &"Label"
+MiniLabel/font_sizes/font_size = 28
+Panel/styles/panel = SubResource("StyleBoxFlat_gsqoc")
+RadiusPanel/base_type = &"Panel"
+RadiusPanel/styles/panel = SubResource("StyleBoxFlat_a2l2q")
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 90
+TransparentButton/base_type = &"Button"
+TransparentButton/styles/hover = SubResource("StyleBoxFlat_466ly")
+TransparentButton/styles/normal = SubResource("StyleBoxFlat_0omi4")
+TransparentButton/styles/pressed = SubResource("StyleBoxFlat_52mx2")

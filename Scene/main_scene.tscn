@@ -1,0 +1,217 @@
+[gd_scene load_steps=10 format=3 uid="uid://cri7578rdlgdj"]
+
+[ext_resource type="Script" uid="uid://d2hy6c3vi3yhi" path="res://Script/Object Script/main_scene.gd" id="1_31fxm"]
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_j4qrl"]
+[ext_resource type="PackedScene" uid="uid://batt0sp3kgbpo" path="res://Prefabs/Buttons/footer_button.tscn" id="3_06yma"]
+[ext_resource type="Script" uid="uid://bhcc22s8p6nth" path="res://Script/UI/Panel/main_panel.gd" id="4_i64o6"]
+[ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://_Assets/Add.svg" id="5_1d8q1"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="5_lee88"]
+[ext_resource type="Script" uid="uid://qe4iw7hcli7n" path="res://Script/Manager/ui_manager.gd" id="6_lee88"]
+[ext_resource type="PackedScene" uid="uid://2k7386e405r4" path="res://Prefabs/Panel/float_panel.tscn" id="8_k2rys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31fxm"]
+bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("ui_root")]
+script = ExtResource("1_31fxm")
+ui_root = NodePath("CanvasLayer/Control")
+
+[node name="UI Manager" type="Node" parent="." node_paths=PackedStringArray("_home_panel", "_library_panel")]
+script = ExtResource("6_lee88")
+_home_panel = NodePath("../CanvasLayer/Control/Home Panel")
+_library_panel = NodePath("../CanvasLayer/Control/Library Panel")
+_float_panel = ExtResource("8_k2rys")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j4qrl")
+
+[node name="Home Panel" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("4_i64o6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+theme_type_variation = &"TitleLabel"
+text = "歡迎回來"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Home Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 60
+text = "S"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="folder" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+text = "文件夾"
+vertical_alignment = 1
+
+[node name="cards" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+text = "單字卡"
+vertical_alignment = 1
+
+[node name="Library Panel" type="MarginContainer" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("4_i64o6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+theme = ExtResource("1_j4qrl")
+theme_type_variation = &"TitleLabel"
+text = "資料庫"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_j4qrl")
+
+[node name="folder" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+theme = ExtResource("1_j4qrl")
+text = "文件夾"
+vertical_alignment = 1
+
+[node name="cards" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+theme = ExtResource("1_j4qrl")
+text = "單字卡"
+vertical_alignment = 1
+
+[node name="Footer" type="Panel" parent="CanvasLayer/Control"]
+self_modulate = Color(0.737791, 0.737792, 0.737791, 1)
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_31fxm")
+
+[node name="Contaniner" type="CenterContainer" parent="CanvasLayer/Control/Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j4qrl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Footer/Contaniner"]
+layout_mode = 2
+
+[node name="Footer Button" parent="CanvasLayer/Control/Footer/Contaniner/HBoxContainer" instance=ExtResource("3_06yma")]
+layout_mode = 2
+
+[node name="Footer Button2" parent="CanvasLayer/Control/Footer/Contaniner/HBoxContainer" instance=ExtResource("3_06yma")]
+layout_mode = 2
+button_texture = ExtResource("5_1d8q1")
+button_text = "Add"
+id = "add"
+
+[node name="Footer Button3" parent="CanvasLayer/Control/Footer/Contaniner/HBoxContainer" instance=ExtResource("3_06yma")]
+layout_mode = 2
+button_texture = ExtResource("5_lee88")
+button_text = "Library"
+id = "library"
+
+[node name="Float Panel" parent="CanvasLayer/Control" instance=ExtResource("8_k2rys")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="scroll_ended" from="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer" to="." method="_on_scroll_container_scroll_ended"]
+[connection signal="scroll_started" from="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer" to="." method="_on_scroll_container_scroll_started"]
+[connection signal="scroll_ended" from="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer" to="." method="_on_scroll_container_scroll_ended"]
+[connection signal="scroll_started" from="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer" to="." method="_on_scroll_container_scroll_started"]

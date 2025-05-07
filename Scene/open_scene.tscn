@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://w7cetgt2vrrm"]
+
+[ext_resource type="Texture2D" uid="uid://o12p53hppms3" path="res://icon.svg" id="1_1gja2"]
+[ext_resource type="Script" uid="uid://catjon2505jr0" path="res://Script/Object Script/open_scene.gd" id="1_4jubi"]
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="2_tmy44"]
+
+[node name="Open Scene" type="Node2D"]
+script = ExtResource("1_4jubi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -197.0
+offset_right = 197.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1gja2")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = 234.0
+offset_right = 207.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tmy44")
+text = "Vbc Learn"
+horizontal_alignment = 1
+vertical_alignment = 1

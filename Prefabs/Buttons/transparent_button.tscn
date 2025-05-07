@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://btvoij2dx6up3"]
+
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_8vhlt"]
+[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/transparent_button.gd" id="2_2src0"]
+[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://_Assets/Action Copy.svg" id="2_5rvce"]
+
+[node name="Card Button" type="Button" node_paths=PackedStringArray("texture_rect", "label")]
+custom_minimum_size = Vector2(50, 150)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme = ExtResource("1_8vhlt")
+theme_type_variation = &"TransparentButton"
+alignment = 0
+expand_icon = true
+script = ExtResource("2_2src0")
+button_texture = ExtResource("2_5rvce")
+button_text = "單字卡"
+id = "card"
+texture_rect = NodePath("MarginContainer/HBoxContainer/TextureRect")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_5rvce")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "單字卡"

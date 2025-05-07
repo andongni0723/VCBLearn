@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://2k7386e405r4"]
+
+[ext_resource type="Script" uid="uid://brbs7jxqyvii3" path="res://Script/UI/float_panel.gd" id="1_tcquv"]
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="2_sepxq"]
+[ext_resource type="PackedScene" uid="uid://btvoij2dx6up3" path="res://Prefabs/Buttons/transparent_button.tscn" id="3_n7pm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1d8q1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Float Panel" type="Panel" node_paths=PackedStringArray("panel_parent", "panel", "button_parent")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_sepxq")
+theme_override_styles/panel = SubResource("StyleBoxFlat_lee88")
+script = ExtResource("1_tcquv")
+panel_parent = NodePath("Panel Parent")
+panel = NodePath("Panel Parent/Panel")
+button_parent = NodePath("Panel Parent/Panel/MarginContainer/VBoxContainer")
+transparent_button_prefab = ExtResource("3_n7pm1")
+transition_time = 0.1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+flat = true
+
+[node name="Panel Parent" type="Control" parent="."]
+custom_minimum_size = Vector2(1080, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Panel Parent"]
+custom_minimum_size = Vector2(1080, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+theme_type_variation = &"RadiusPanel"
+
+[node name="TextureRect" type="Panel" parent="Panel Parent/Panel"]
+modulate = Color(0.69443, 0.714625, 0.782332, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 31.0
+offset_right = 68.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1d8q1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel Parent/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel Parent/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[connection signal="pressed" from="Button" to="." method="fade_out"]

@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="VcbLearn"
+run/main_scene="uid://w7cetgt2vrrm"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalSignal="*res://Script/Manager/global_signal.gd"
+DataManager="*res://Script/Manager/data_manager.gd"
+SceneManager="*res://Script/Manager/scene_manager.gd"
+Data="*res://Script/Manager/data.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=2400
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=5
+
+[dotnet]
+
+project/assembly_name="VcbLearn"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.0784314, 0.0862745, 0.113725, 1)
