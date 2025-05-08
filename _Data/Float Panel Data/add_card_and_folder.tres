@@ -9,14 +9,14 @@
 script = ExtResource("1_ohehv")
 texture = ExtResource("2_blibm")
 text = "單字卡"
-signal_name = "create_card"
+signal_name = "create_card_panel"
 metadata/_custom_type_script = "uid://cnlqc5x52tphx"
 
 [sub_resource type="Resource" id="Resource_h0dew"]
 script = ExtResource("1_ohehv")
 texture = ExtResource("3_blibm")
 text = "文件夾"
-signal_name = "create_folder"
+signal_name = "create_folder_panel"
 metadata/_custom_type_script = "uid://cnlqc5x52tphx"
 
 [resource]

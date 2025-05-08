@@ -5,6 +5,12 @@ var current_panel: MainPanel
 
 func _enter_tree() -> void:
     GlobalSignal.footer_button_pressed.connect(_on_footer_button_pressed)
+    GlobalSignal.call_create_folder_panel.connect(create_folder_panel)
+
+func _exit_tree() -> void:
+    GlobalSignal.footer_button_pressed.disconnect(_on_footer_button_pressed)
+    GlobalSignal.call_create_folder_panel.disconnect(create_folder_panel)
+
 
 func _ready() -> void:
     current_panel = UIManager.home_panel
@@ -24,8 +30,13 @@ func add_float_panel(target: PackedScene, data: FloatPanelResource):
     p.initialize(data)
     p.fade_in()
 
+func create_folder_panel():
+    var p: FloatPanel = UIManager.create_folder_panel.instantiate()
+    ui_root.add_child(p)
+    p.fade_in()
+
 func _on_footer_button_pressed(id):
-    match (id):
+    match id:
         "home":
             change_panel(UIManager.home_panel)
         "library":

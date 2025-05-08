@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256mm"
+   height="256mm"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.275;stroke-dasharray:none"
+       d="m 29.264603,113.3483 c -6.907077,0 -12.468012,5.31605 -12.468012,11.91962 v 99.07327 c 0,6.60356 5.560935,11.91961 12.468012,11.91961 H 230.60181 c 6.90707,0 12.46747,-5.31605 12.46747,-11.91961 v -99.07327 c 0,-6.60357 -5.5604,-11.91962 -12.46747,-11.91962 h -31.96292 l -50.4774,78.49519 a 18.100023,10.553623 0 0 1 -33.90599,-0.0155 l -50.225531,-78.4797 z" />
+    <path
+       d="M 87.830071,221.15607 25.763755,54.827789 h 42.203712 l 34.466013,95.011031 31.9708,-95.011031 h 41.11458 L 113.14619,221.17602 a 13.514617,13.514617 0.0451582 0 1 -25.316119,-0.0199 z"
+       id="text3-1"
+       style="font-weight:800;font-size:272.282px;font-family:'JetBrainsMono Nerd Font';-inkscape-font-specification:'JetBrainsMono Nerd Font Ultra-Bold';fill:#ffffff;fill-opacity:1;stroke-width:330.198;stroke-linecap:round;stroke-linejoin:round;paint-order:normal"
+       transform="matrix(1.2805031,0,0,0.78094304,2.9496997,1.8895521)"
+       aria-label="V" />
+  </g>
+</svg>

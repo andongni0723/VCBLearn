@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cri7578rdlgdj"]
+[gd_scene load_steps=14 format=3 uid="uid://cri7578rdlgdj"]
 
 [ext_resource type="Script" uid="uid://d2hy6c3vi3yhi" path="res://Script/Object Script/main_scene.gd" id="1_31fxm"]
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_j4qrl"]
 [ext_resource type="PackedScene" uid="uid://batt0sp3kgbpo" path="res://Prefabs/Buttons/footer_button.tscn" id="3_06yma"]
+[ext_resource type="PackedScene" uid="uid://5fycktkat26v" path="res://Prefabs/Panel/create_folder.tscn" id="4_0xtjt"]
 [ext_resource type="Script" uid="uid://bhcc22s8p6nth" path="res://Script/UI/Panel/main_panel.gd" id="4_i64o6"]
 [ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://_Assets/Add.svg" id="5_1d8q1"]
 [ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="5_lee88"]
 [ext_resource type="Script" uid="uid://qe4iw7hcli7n" path="res://Script/Manager/ui_manager.gd" id="6_lee88"]
+[ext_resource type="PackedScene" uid="uid://cs6tc5w4oli7d" path="res://Prefabs/path_group.tscn" id="7_0xtjt"]
+[ext_resource type="PackedScene" uid="uid://fn467vwp5vy3" path="res://Prefabs/Buttons/fill_button.tscn" id="8_j1xvy"]
 [ext_resource type="PackedScene" uid="uid://2k7386e405r4" path="res://Prefabs/Panel/float_panel.tscn" id="8_k2rys"]
+[ext_resource type="Texture2D" uid="uid://bppp3uut5jthx" path="res://_Assets/Remove.svg" id="9_j1xvy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31fxm"]
 bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
@@ -23,6 +27,7 @@ script = ExtResource("6_lee88")
 _home_panel = NodePath("../CanvasLayer/Control/Home Panel")
 _library_panel = NodePath("../CanvasLayer/Control/Library Panel")
 _float_panel = ExtResource("8_k2rys")
+_create_folder_panel = ExtResource("4_0xtjt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -84,6 +89,19 @@ theme_override_constants/margin_top = 100
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Path Group" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_0xtjt")]
+layout_mode = 2
+data_save_key = "file_data_path"
+
+[node name="Delete Button" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("8_j1xvy")]
+self_modulate = Color(0.598924, 0.175845, 0.130832, 1)
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+button_texture = ExtResource("9_j1xvy")
+button_text = "刪除應用暫存"
+id = "delete_app_data"
 
 [node name="folder" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -201,15 +219,6 @@ layout_mode = 2
 button_texture = ExtResource("5_lee88")
 button_text = "Library"
 id = "library"
-
-[node name="Float Panel" parent="CanvasLayer/Control" instance=ExtResource("8_k2rys")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [connection signal="scroll_ended" from="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer" to="." method="_on_scroll_container_scroll_ended"]
 [connection signal="scroll_started" from="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer" to="." method="_on_scroll_container_scroll_started"]

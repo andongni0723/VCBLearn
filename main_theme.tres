@@ -1,13 +1,62 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://86438e816syb"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://86438e816syb"]
 
 [ext_resource type="FontFile" uid="uid://bux54qhsamoy7" path="res://font/Poppins-SemiBold.ttf" id="1_a2l2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470mv"]
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hjjl"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxwih"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt4o7"]
+bg_color = Color(0.392543, 0.392543, 0.392543, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
 [sub_resource type="FontVariation" id="FontVariation_470mv"]
 base_font = ExtResource("1_a2l2q")
 spacing_glyph = 1
+
+[sub_resource type="FontVariation" id="FontVariation_a2l2q"]
+base_font = ExtResource("1_a2l2q")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 5
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py0i1"]
+bg_color = Color(0.167995, 0.180937, 0.226182, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnmfn"]
+bg_color = Color(0.168627, 0.180392, 0.227451, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 20.0
+expand_margin_right = 20.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsqoc"]
 bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
@@ -40,8 +89,18 @@ corner_radius_bottom_left = 50
 
 [resource]
 Button/styles/focus = SubResource("StyleBoxFlat_470mv")
+FillButton/base_type = &"Button"
+FillButton/styles/hover = SubResource("StyleBoxFlat_7hjjl")
+FillButton/styles/normal = SubResource("StyleBoxFlat_sxwih")
+FillButton/styles/pressed = SubResource("StyleBoxFlat_rt4o7")
+HBoxContainer/constants/separation = 50
 Label/font_sizes/font_size = 48
 Label/fonts/font = SubResource("FontVariation_470mv")
+LineEdit/font_sizes/font_size = 36
+LineEdit/fonts/font = SubResource("FontVariation_a2l2q")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_58jnp")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_py0i1")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_wnmfn")
 MarginContainer/constants/margin_bottom = 50
 MarginContainer/constants/margin_left = 50
 MarginContainer/constants/margin_right = 50
@@ -57,3 +116,4 @@ TransparentButton/base_type = &"Button"
 TransparentButton/styles/hover = SubResource("StyleBoxFlat_466ly")
 TransparentButton/styles/normal = SubResource("StyleBoxFlat_0omi4")
 TransparentButton/styles/pressed = SubResource("StyleBoxFlat_52mx2")
+VBoxContainer/constants/separation = 50

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs6tc5w4oli7d"]
+
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_87npq"]
+[ext_resource type="Script" uid="uid://dw345c4ddjqvd" path="res://Script/UI/path_group.gd" id="1_gv5ig"]
+[ext_resource type="PackedScene" uid="uid://fn467vwp5vy3" path="res://Prefabs/Buttons/fill_button.tscn" id="1_wj42s"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="2_gv5ig"]
+[ext_resource type="PackedScene" uid="uid://m5n7pcjbwp8y" path="res://Prefabs/fill_line_edit.tscn" id="3_87npq"]
+
+[node name="Path Group" type="MarginContainer" node_paths=PackedStringArray("button", "line_edit", "file_dialog")]
+custom_minimum_size = Vector2(0, 200)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 250.0
+grow_horizontal = 2
+theme = ExtResource("1_87npq")
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 20
+script = ExtResource("1_gv5ig")
+button = NodePath("HBoxContainer/Button")
+line_edit = NodePath("HBoxContainer/LineEdit")
+file_dialog = NodePath("FileDialog")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" parent="HBoxContainer" instance=ExtResource("1_wj42s")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+button_texture = ExtResource("2_gv5ig")
+button_text = "資料位置"
+id = ""
+
+[node name="LineEdit" parent="HBoxContainer" instance=ExtResource("3_87npq")]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "路徑"
+editable = false
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a Directory"
+size = Vector2i(960, 578)
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

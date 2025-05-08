@@ -1,5 +1,7 @@
 @tool
-class_name TransparentButton extends Control
+class_name CustomButton extends Control
+
+signal _on_custom_button_pressed(id: String)
 
 @export var button_texture: CompressedTexture2D:
     set(value):
@@ -26,4 +28,4 @@ func initalize(_texture: CompressedTexture2D, _text: String, _id: String):
 
 func _on_button_pressed() -> void:
     GlobalSignal.button_pressed.emit(id)
-    GlobalSignal.transparent_button_pressed.emit(id)
+    _on_custom_button_pressed.emit(id)

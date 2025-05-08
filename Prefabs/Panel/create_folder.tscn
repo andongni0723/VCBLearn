@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://5fycktkat26v"]
+
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_g35wn"]
+[ext_resource type="Script" uid="uid://cbrb4ve51dn5v" path="res://Script/UI/Panel/create_foler_float_panel.gd" id="2_d1h51"]
+[ext_resource type="PackedScene" uid="uid://btvoij2dx6up3" path="res://Prefabs/Buttons/transparent_button.tscn" id="3_d1h51"]
+[ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://_Assets/Arrow Left.svg" id="4_1ea6l"]
+[ext_resource type="PackedScene" uid="uid://m5n7pcjbwp8y" path="res://Prefabs/fill_line_edit.tscn" id="5_d1h51"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[node name="Create Folder Panel" type="Panel" node_paths=PackedStringArray("line_edit", "panel_parent", "panel", "button_array")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g35wn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_lee88")
+script = ExtResource("2_d1h51")
+line_edit = NodePath("Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox/LineEdit")
+panel_parent = NodePath("Panel Parent")
+panel = NodePath("Panel Parent/Panel")
+button_array = [NodePath("Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox/Create Button")]
+transition_time = 0.1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+flat = true
+
+[node name="Panel Parent" type="Control" parent="."]
+custom_minimum_size = Vector2(1080, 2400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel Parent"]
+custom_minimum_size = Vector2(1080, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+theme_type_variation = &"RadiusPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel Parent/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel Parent/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel Parent/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+icon = ExtResource("4_1ea6l")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "創建文件夾"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel Parent/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="LineEdit" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox" instance=ExtResource("5_d1h51")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="Create Button" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox" instance=ExtResource("3_d1h51")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+button_texture = null
+button_text = "創建"
+id = "create_folder"
+
+[node name="TextureRect" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox/Create Button/MarginContainer/HBoxContainer" index="0"]
+visible = false
+texture = null
+
+[node name="Label" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox/Create Button/MarginContainer/HBoxContainer" index="1"]
+theme_override_colors/font_color = Color(0.454216, 0.468704, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "創建"
+
+[connection signal="pressed" from="Button" to="." method="fade_out"]
+[connection signal="pressed" from="Panel Parent/Panel/MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="fade_out"]
+[connection signal="text_changed" from="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox/LineEdit" to="." method="_on_line_edit_text_changed"]
+
+[editable path="Panel Parent/Panel/MarginContainer/VBoxContainer/MarginContainer/VBox/Create Button"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcbl7canr48i" path="res://_Assets/AcceptDialog.svg" id="2_0v0af"]
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="3_484gw"]
 
-[node name="Footer Button" type="Control" node_paths=PackedStringArray("button", "label")]
+[node name="Footer Button" type="Control" node_paths=PackedStringArray("texture_rect", "label")]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 3
 anchors_preset = 0
@@ -13,9 +13,9 @@ offset_bottom = 300.0
 script = ExtResource("1_akjdg")
 button_texture = ExtResource("2_0v0af")
 button_text = "Home"
-id = "home"
-button = NodePath("CenterContainer/VBoxContainer/Button")
+texture_rect = NodePath("CenterContainer/VBoxContainer/Button/TextureRect")
 label = NodePath("CenterContainer/VBoxContainer/Label")
+id = "home"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -32,9 +32,17 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("3_484gw")
-icon = ExtResource("2_0v0af")
 icon_alignment = 1
 expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Button"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+theme = ExtResource("3_484gw")
+texture = ExtResource("2_0v0af")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
