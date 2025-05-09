@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://w7cetgt2vrrm"]
 
 [ext_resource type="Script" uid="uid://catjon2505jr0" path="res://Script/Object Script/open_scene.gd" id="1_4jubi"]
-[ext_resource type="Texture2D" uid="uid://iuul1x4ql131" path="res://_Assets/vcblearn_logo_v1_white.svg" id="2_4jubi"]
+[ext_resource type="Texture2D" uid="uid://iuul1x4ql131" path="res://Assets/vcblearn_logo_v1_white.svg" id="2_4jubi"]
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="2_tmy44"]
 
 [node name="Open Scene" type="Node2D"]

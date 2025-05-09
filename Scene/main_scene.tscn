@@ -1,17 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://cri7578rdlgdj"]
+[gd_scene load_steps=16 format=3 uid="uid://cri7578rdlgdj"]
 
 [ext_resource type="Script" uid="uid://d2hy6c3vi3yhi" path="res://Script/Object Script/main_scene.gd" id="1_31fxm"]
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_j4qrl"]
 [ext_resource type="PackedScene" uid="uid://batt0sp3kgbpo" path="res://Prefabs/Buttons/footer_button.tscn" id="3_06yma"]
 [ext_resource type="PackedScene" uid="uid://5fycktkat26v" path="res://Prefabs/Panel/create_folder.tscn" id="4_0xtjt"]
 [ext_resource type="Script" uid="uid://bhcc22s8p6nth" path="res://Script/UI/Panel/main_panel.gd" id="4_i64o6"]
-[ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://_Assets/Add.svg" id="5_1d8q1"]
-[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="5_lee88"]
+[ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="5_1d8q1"]
+[ext_resource type="PackedScene" uid="uid://bn6ku1mshl6m1" path="res://Prefabs/Panel/full_panel.tscn" id="5_k87s1"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="5_lee88"]
 [ext_resource type="Script" uid="uid://qe4iw7hcli7n" path="res://Script/Manager/ui_manager.gd" id="6_lee88"]
 [ext_resource type="PackedScene" uid="uid://cs6tc5w4oli7d" path="res://Prefabs/path_group.tscn" id="7_0xtjt"]
 [ext_resource type="PackedScene" uid="uid://fn467vwp5vy3" path="res://Prefabs/Buttons/fill_button.tscn" id="8_j1xvy"]
 [ext_resource type="PackedScene" uid="uid://2k7386e405r4" path="res://Prefabs/Panel/float_panel.tscn" id="8_k2rys"]
-[ext_resource type="Texture2D" uid="uid://bppp3uut5jthx" path="res://_Assets/Remove.svg" id="9_j1xvy"]
+[ext_resource type="Texture2D" uid="uid://bppp3uut5jthx" path="res://Assets/Remove.svg" id="9_j1xvy"]
+[ext_resource type="PackedScene" uid="uid://b2buc6vw0x533" path="res://Prefabs/folder_group.tscn" id="10_7riyq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31fxm"]
 bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
@@ -28,6 +30,7 @@ _home_panel = NodePath("../CanvasLayer/Control/Home Panel")
 _library_panel = NodePath("../CanvasLayer/Control/Library Panel")
 _float_panel = ExtResource("8_k2rys")
 _create_folder_panel = ExtResource("4_0xtjt")
+_folder_panel = ExtResource("5_k87s1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -41,6 +44,7 @@ grow_vertical = 2
 theme = ExtResource("1_j4qrl")
 
 [node name="Home Panel" type="MarginContainer" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,14 +107,6 @@ button_texture = ExtResource("9_j1xvy")
 button_text = "刪除應用暫存"
 id = "delete_app_data"
 
-[node name="folder" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 8.0
-text = "文件夾"
-vertical_alignment = 1
-
 [node name="cards" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
@@ -119,8 +115,23 @@ size_flags_stretch_ratio = 8.0
 text = "單字卡"
 vertical_alignment = 1
 
+[node name="Folder Group" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+
+[node name="folder" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+theme = ExtResource("1_j4qrl")
+text = "文件夾"
+vertical_alignment = 1
+
+[node name="Folder Group" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group" instance=ExtResource("10_7riyq")]
+layout_mode = 2
+
 [node name="Library Panel" type="MarginContainer" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,15 +172,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_j4qrl")
 
-[node name="folder" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 8.0
-theme = ExtResource("1_j4qrl")
-text = "文件夾"
-vertical_alignment = 1
-
 [node name="cards" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
@@ -178,6 +180,23 @@ size_flags_stretch_ratio = 8.0
 theme = ExtResource("1_j4qrl")
 text = "單字卡"
 vertical_alignment = 1
+
+[node name="Folder Group" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+
+[node name="folder" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+theme = ExtResource("1_j4qrl")
+text = "文件夾"
+vertical_alignment = 1
+
+[node name="Folder Group" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group" instance=ExtResource("10_7riyq")]
+layout_mode = 2
+vertical = false
 
 [node name="Footer" type="Panel" parent="CanvasLayer/Control"]
 self_modulate = Color(0.737791, 0.737792, 0.737791, 1)

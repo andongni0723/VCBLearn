@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwokewbwak1le"
-path="res://.godot/imported/Folder.svg-237f68840a6faeb0858acd3e6038490b.ctex"
+uid="uid://cu85x318ct3th"
+path="res://.godot/imported/triangle.png-111c90383ae28236ab668776c481e269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Folder.svg"
-dest_files=["res://.godot/imported/Folder.svg-237f68840a6faeb0858acd3e6038490b.ctex"]
+source_file="res://Assets/triangle.png"
+dest_files=["res://.godot/imported/triangle.png-111c90383ae28236ab668776c481e269.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

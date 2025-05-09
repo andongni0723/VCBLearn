@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2buc6vw0x533"]
+
+[ext_resource type="PackedScene" uid="uid://cxt35d6vs0maq" path="res://Prefabs/Buttons/folder_button.tscn" id="1_dp4pj"]
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_s6d2t"]
+[ext_resource type="Script" uid="uid://cxs4qlypfvygs" path="res://Script/UI/folder_group.gd" id="2_u2r3h"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="4_3bfb3"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_s6d2t")
+script = ExtResource("2_u2r3h")
+vertical = true
+container = NodePath("ScrollContainer/VFlow")
+folder_button_prefab = ExtResource("1_dp4pj")
+folder_icon = ExtResource("4_3bfb3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VFlow" type="FlowContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+size_flags_horizontal = 3
+vertical = true
+
+[node name="Card Button" parent="ScrollContainer/VFlow" instance=ExtResource("1_dp4pj")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_fvhhk"]
 [ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="2_iw1bb"]
-[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://_Assets/Action Copy.svg" id="3_c3m82"]
+[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://Assets/Action Copy.svg" id="3_c3m82"]
 
 [node name="Card Button" type="Button" node_paths=PackedStringArray("texture_rect", "label")]
 self_modulate = Color(0.00483931, 0.528004, 0.3931, 1)

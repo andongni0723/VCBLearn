@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r3xy8j475n1g"
-path="res://.godot/imported/ToolAddNode.svg-53c1f4d3668bbe0fb507ceae2a67d5c8.ctex"
+uid="uid://bvdaj5rjqmp0o"
+path="res://.godot/imported/Arrow Left.svg-00c7da4d7df2766f7cc50063aef8ab57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/ToolAddNode.svg"
-dest_files=["res://.godot/imported/ToolAddNode.svg-53c1f4d3668bbe0fb507ceae2a67d5c8.ctex"]
+source_file="res://Assets/Arrow Left.svg"
+dest_files=["res://.godot/imported/Arrow Left.svg-00c7da4d7df2766f7cc50063aef8ab57.ctex"]
 
 [params]
 

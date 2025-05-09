@@ -1,4 +1,3 @@
-# res://scripts/SceneManager.gd
 extends Node
 
 ## --- 可調參數 -------------------------------------------------

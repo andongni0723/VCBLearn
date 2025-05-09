@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cnlqc5x52tphx" path="res://Script/Data/button_data.gd" id="1_ohehv"]
 [ext_resource type="Script" uid="uid://jy3knfk4us3a" path="res://Script/Data/float_panel_resource.gd" id="1_ydbq3"]
-[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://_Assets/Action Copy.svg" id="2_blibm"]
-[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="3_blibm"]
+[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://Assets/Action Copy.svg" id="2_blibm"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="3_blibm"]
 
 [sub_resource type="Resource" id="Resource_00cmw"]
 script = ExtResource("1_ohehv")

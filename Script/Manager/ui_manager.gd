@@ -12,8 +12,12 @@ static var float_panel: PackedScene
 @export var _create_folder_panel: PackedScene
 static var create_folder_panel: PackedScene
 
+@export var _folder_panel: PackedScene
+static var folder_panel: PackedScene
+
 func _enter_tree() -> void:
     home_panel = _home_panel
     library_panel = _library_panel
     float_panel = _float_panel
     create_folder_panel = _create_folder_panel
+    folder_panel = _folder_panel

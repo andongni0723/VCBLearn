@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_g35wn"]
 [ext_resource type="Script" uid="uid://cbrb4ve51dn5v" path="res://Script/UI/Panel/create_foler_float_panel.gd" id="2_d1h51"]
 [ext_resource type="PackedScene" uid="uid://btvoij2dx6up3" path="res://Prefabs/Buttons/transparent_button.tscn" id="3_d1h51"]
-[ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://_Assets/Arrow Left.svg" id="4_1ea6l"]
+[ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="4_1ea6l"]
 [ext_resource type="PackedScene" uid="uid://m5n7pcjbwp8y" path="res://Prefabs/fill_line_edit.tscn" id="5_d1h51"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
@@ -75,7 +75,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 icon = ExtResource("4_1ea6l")
-flat = true
 expand_icon = true
 
 [node name="Label" type="Label" parent="Panel Parent/Panel/MarginContainer/VBoxContainer/HBoxContainer"]

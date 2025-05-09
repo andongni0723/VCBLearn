@@ -22,6 +22,7 @@ func _ready() -> void:
 func _on_file_dialog_dir_selected(dir: String) -> void:
     _update_ui(dir)
     DataManager.update_value(data_save_key, dir)
+    GlobalSignal.call_refresh_file.emit()
 
 
 func _update_ui(data: String):

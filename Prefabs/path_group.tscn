@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_87npq"]
 [ext_resource type="Script" uid="uid://dw345c4ddjqvd" path="res://Script/UI/path_group.gd" id="1_gv5ig"]
 [ext_resource type="PackedScene" uid="uid://fn467vwp5vy3" path="res://Prefabs/Buttons/fill_button.tscn" id="1_wj42s"]
-[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://_Assets/Folder.svg" id="2_gv5ig"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="2_gv5ig"]
 [ext_resource type="PackedScene" uid="uid://m5n7pcjbwp8y" path="res://Prefabs/fill_line_edit.tscn" id="3_87npq"]
 
 [node name="Path Group" type="MarginContainer" node_paths=PackedStringArray("button", "line_edit", "file_dialog")]

@@ -20,7 +20,7 @@ signal _on_custom_button_pressed(id: String)
 @export var id: String = ""
 
 
-func initalize(_texture: CompressedTexture2D, _text: String, _id: String):
+func initialize(_texture: CompressedTexture2D, _text: String, _id: String):
     button_texture = _texture
     button_text = _text
     id = _id

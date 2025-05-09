@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcbl7canr48i"
-path="res://.godot/imported/AcceptDialog.svg-3cc10090d85f52db5334bb4e6a09aa22.ctex"
+uid="uid://iuul1x4ql131"
+path="res://.godot/imported/vcblearn_logo_v1_white.svg-bc0a182e272c08a586bd8c5d41f3bd90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/AcceptDialog.svg"
-dest_files=["res://.godot/imported/AcceptDialog.svg-3cc10090d85f52db5334bb4e6a09aa22.ctex"]
+source_file="res://Assets/vcblearn_logo_v1_white.svg"
+dest_files=["res://.godot/imported/vcblearn_logo_v1_white.svg-bc0a182e272c08a586bd8c5d41f3bd90.ctex"]
 
 [params]
 

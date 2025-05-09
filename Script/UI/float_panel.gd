@@ -21,7 +21,7 @@ func initialize(_r: FloatPanelResource) -> void:
     for data in _resource.button_data:
         var b: CustomButton = transparent_button_prefab.instantiate()
         button_parent.add_child(b)
-        b.initalize(data.texture, data.text, data.signal_name)
+        b.initialize(data.texture, data.text, data.signal_name)
         button_array.append(b)
     _connect_signal()
 

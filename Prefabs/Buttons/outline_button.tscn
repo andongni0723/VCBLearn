@@ -1,20 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://btvoij2dx6up3"]
+[gd_scene load_steps=4 format=3 uid="uid://c6osk6ue4yak6"]
 
-[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_8vhlt"]
-[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="2_2src0"]
-[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://Assets/Action Copy.svg" id="2_5rvce"]
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_x5du4"]
+[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="2_as3no"]
+[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://Assets/Action Copy.svg" id="3_8rui4"]
 
 [node name="Card Button" type="Button" node_paths=PackedStringArray("texture_rect", "label")]
 custom_minimum_size = Vector2(50, 150)
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 203.0
 grow_horizontal = 2
-theme = ExtResource("1_8vhlt")
-theme_type_variation = &"TransparentButton"
+theme = ExtResource("1_x5du4")
+theme_type_variation = &"OutlineButton"
 alignment = 0
 expand_icon = true
-script = ExtResource("2_2src0")
-button_texture = ExtResource("2_5rvce")
+script = ExtResource("2_as3no")
+button_texture = ExtResource("3_8rui4")
 button_text = "單字卡"
 texture_rect = NodePath("MarginContainer/HBoxContainer/TextureRect")
 label = NodePath("MarginContainer/HBoxContainer/Label")
@@ -36,7 +37,8 @@ theme_override_constants/separation = 40
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("2_5rvce")
+size_flags_vertical = 4
+texture = ExtResource("3_8rui4")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]

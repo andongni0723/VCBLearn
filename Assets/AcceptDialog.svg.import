@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcayipmg5caby"
-path="res://.godot/imported/circle.png-e3a9d756f5cf04896a6f710bdd0bbf4c.ctex"
+uid="uid://bcbl7canr48i"
+path="res://.godot/imported/AcceptDialog.svg-07456d30d51d4eae6f507a605852295c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/circle.png"
-dest_files=["res://.godot/imported/circle.png-e3a9d756f5cf04896a6f710bdd0bbf4c.ctex"]
+source_file="res://Assets/AcceptDialog.svg"
+dest_files=["res://.godot/imported/AcceptDialog.svg-07456d30d51d4eae6f507a605852295c.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -1,0 +1,28 @@
+class_name FullPanel extends BasePanel
+
+@export var panel_parent: Control
+@export var panel: Control
+@export var button_parent: Control
+@export var button_array: Array[CustomButton]
+
+@export var folder_name_label: Label
+
+func initialize(folder_name: String):
+    folder_name_label.text = folder_name
+
+func fade_in():
+    modulate.a = 1.0
+    panel.position.x = panel_parent.custom_minimum_size.x
+    visible = true
+    var t = create_tween().parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+    t.tween_property(panel, "position:x", 0.0, transition_time)
+    await get_tree().create_timer(transition_time).timeout
+
+
+func fade_out():
+    modulate.a = 1.0
+    panel.position.x = 0
+    var t := create_tween()
+    t.tween_property(panel, "position:x", panel.size.x, transition_time / 2)
+    await get_tree().create_timer(transition_time).timeout
+    queue_free()

@@ -21,3 +21,4 @@ func _on_custom_button_pressed(id: String):
             if folder_path.is_empty(): return
             var folder := DirAccess.open(folder_path)
             folder.make_dir(new_folder_name)
+            GlobalSignal.call_refresh_file.emit()
