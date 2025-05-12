@@ -13,11 +13,23 @@ offset_bottom = 300.0
 script = ExtResource("1_akjdg")
 button_texture = ExtResource("2_0v0af")
 button_text = "Home"
-texture_rect = NodePath("CenterContainer/VBoxContainer/Button/TextureRect")
-label = NodePath("CenterContainer/VBoxContainer/Label")
+texture_rect = NodePath("Button/CenterContainer/VBoxContainer/TextureRect")
+label = NodePath("Button/CenterContainer/VBoxContainer/Label")
 id = "home"
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_484gw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,26 +37,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/CenterContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Button/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme = ExtResource("3_484gw")
-icon_alignment = 1
-expand_icon = true
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Button"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-offset_right = 100.0
-offset_bottom = 100.0
 theme = ExtResource("3_484gw")
 texture = ExtResource("2_0v0af")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Button/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_484gw")
 theme_type_variation = &"MiniLabel"
@@ -52,4 +55,4 @@ text = "Home"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

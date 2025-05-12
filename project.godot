@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="VcbLearn"
+config/version="v0.3"
 run/main_scene="uid://w7cetgt2vrrm"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="uid://iuul1x4ql131"
 
 [autoload]
 

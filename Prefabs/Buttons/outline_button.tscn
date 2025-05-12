@@ -10,6 +10,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 203.0
 grow_horizontal = 2
+mouse_filter = 1
 theme = ExtResource("1_x5du4")
 theme_type_variation = &"OutlineButton"
 alignment = 0

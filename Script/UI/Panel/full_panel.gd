@@ -5,11 +5,6 @@ class_name FullPanel extends BasePanel
 @export var button_parent: Control
 @export var button_array: Array[CustomButton]
 
-@export var folder_name_label: Label
-
-func initialize(folder_name: String):
-    folder_name_label.text = folder_name
-
 func fade_in():
     modulate.a = 1.0
     panel.position.x = panel_parent.custom_minimum_size.x

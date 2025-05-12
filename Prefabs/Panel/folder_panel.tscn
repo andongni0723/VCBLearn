@@ -1,30 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn6ku1mshl6m1"]
+[gd_scene load_steps=10 format=3 uid="uid://doimonp5hkm7u"]
 
-[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_n4ucf"]
-[ext_resource type="Script" uid="uid://de3d6ylijxig1" path="res://Script/UI/Panel/full_panel.gd" id="2_fvxdg"]
-[ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="3_n4ucf"]
-[ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="3_vixkf"]
-[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="4_3x54c"]
-[ext_resource type="Texture2D" uid="uid://b673x436kl221" path="res://Assets/Search.svg" id="4_vd7ih"]
-[ext_resource type="Texture2D" uid="uid://cynxj5bbvcfsg" path="res://Assets/other.svg" id="5_fryel"]
-[ext_resource type="PackedScene" uid="uid://cvm6kaihn23u3" path="res://Prefabs/card_set_group.tscn" id="8_vd7ih"]
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_io716"]
+[ext_resource type="Script" uid="uid://djlnvdb58i2kv" path="res://Script/UI/Panel/folder_panel.gd" id="2_io716"]
+[ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="3_wh840"]
+[ext_resource type="Texture2D" uid="uid://b673x436kl221" path="res://Assets/Search.svg" id="4_ulc7q"]
+[ext_resource type="Texture2D" uid="uid://cynxj5bbvcfsg" path="res://Assets/other.svg" id="5_cas3v"]
+[ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="6_u8efs"]
+[ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="7_g527j"]
+[ext_resource type="PackedScene" uid="uid://cvm6kaihn23u3" path="res://Prefabs/card_set_group.tscn" id="8_28wvb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
 bg_color = Color(0, 0, 0, 0.392157)
 
-[node name="Full Panel" type="Panel" node_paths=PackedStringArray("panel_parent", "panel", "button_parent")]
+[node name="Full Panel" type="Panel" node_paths=PackedStringArray("card_group", "folder_name_label", "panel_parent", "panel")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_n4ucf")
+theme = ExtResource("1_io716")
 theme_override_styles/panel = SubResource("StyleBoxFlat_lee88")
-script = ExtResource("2_fvxdg")
+script = ExtResource("2_io716")
+card_group = NodePath("Panel Parent/Panel/VBoxContainer/Card Group")
+folder_name_label = NodePath("Panel Parent/Panel/VBoxContainer/MarginContainer/VBoxContainer/Folder Name Label")
 panel_parent = NodePath("Panel Parent")
 panel = NodePath("Panel Parent/Panel")
-button_parent = NodePath("Panel Parent/Panel/VBoxContainer/Button Parent")
-transition_time = 0.1
+transition_time = null
 
 [node name="Panel Parent" type="Control" parent="."]
 custom_minimum_size = Vector2(1080, 50)
@@ -75,21 +76,21 @@ alignment = 2
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-icon = ExtResource("3_vixkf")
+icon = ExtResource("3_wh840")
 expand_icon = true
 
 [node name="Search Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-icon = ExtResource("4_vd7ih")
+icon = ExtResource("4_ulc7q")
 expand_icon = true
 
 [node name="Setting Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-icon = ExtResource("5_fryel")
+icon = ExtResource("5_cas3v")
 expand_icon = true
 
 [node name="Back Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar"]
@@ -98,7 +99,7 @@ layout_mode = 2
 offset_right = 100.0
 offset_bottom = 100.0
 size_flags_horizontal = 0
-icon = ExtResource("3_n4ucf")
+icon = ExtResource("6_u8efs")
 expand_icon = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel Parent/Panel/VBoxContainer"]
@@ -111,14 +112,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("4_3x54c")
+texture = ExtResource("7_g527j")
 expand_mode = 1
 
 [node name="Folder Name Label" type="Label" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "文件夾 Name"
 
-[node name="Card Group" parent="Panel Parent/Panel/VBoxContainer" instance=ExtResource("8_vd7ih")]
+[node name="Card Group" parent="Panel Parent/Panel/VBoxContainer" instance=ExtResource("8_28wvb")]
 layout_mode = 2
 
 [node name="Button Parent" type="Control" parent="Panel Parent/Panel/VBoxContainer"]

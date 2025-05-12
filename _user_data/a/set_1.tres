@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardSetData" load_steps=5 format=3 uid="uid://rtuiua2ef38c"]
+
+[ext_resource type="Script" uid="uid://drr6dxilbx1nv" path="res://Script/Data/card_data.gd" id="1_wya08"]
+[ext_resource type="Script" uid="uid://cyeoohghqkh63" path="res://Script/Data/card_set_data.gd" id="2_mbqrs"]
+
+[sub_resource type="Resource" id="Resource_ixq24"]
+script = ExtResource("1_wya08")
+eng = "Apple"
+chs = "蘋果"
+learn_done = true
+metadata/_custom_type_script = "uid://drr6dxilbx1nv"
+
+[sub_resource type="Resource" id="Resource_q4vra"]
+script = ExtResource("1_wya08")
+eng = ""
+chs = "車"
+learn_done = false
+metadata/_custom_type_script = "uid://drr6dxilbx1nv"
+
+[resource]
+script = ExtResource("2_mbqrs")
+title = "Set 1"
+description = "Set 1 for test card set"
+cards = Array[ExtResource("1_wya08")]([SubResource("Resource_ixq24"), SubResource("Resource_q4vra")])
+metadata/_custom_type_script = "uid://cyeoohghqkh63"

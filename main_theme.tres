@@ -1,9 +1,26 @@
-[gd_resource type="Theme" load_steps=21 format=3 uid="uid://86438e816syb"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://86438e816syb"]
 
 [ext_resource type="FontFile" uid="uid://bux54qhsamoy7" path="res://font/Poppins-SemiBold.ttf" id="1_a2l2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470mv"]
 draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffxfl"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu8em"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpkcg"]
+bg_color = Color(0, 0, 0, 0.658824)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hjjl"]
 corner_radius_top_left = 25
@@ -117,9 +134,19 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
 bg_color = Color(0.0784314, 0.0862745, 0.113725, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_470mv"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_466ly"]
 bg_color = Color(0, 0, 0, 0)
@@ -144,6 +171,9 @@ corner_radius_bottom_left = 50
 
 [resource]
 Button/styles/focus = SubResource("StyleBoxFlat_470mv")
+Button/styles/hover = SubResource("StyleBoxFlat_ffxfl")
+Button/styles/normal = SubResource("StyleBoxFlat_qu8em")
+Button/styles/pressed = SubResource("StyleBoxFlat_tpkcg")
 FillButton/base_type = &"Button"
 FillButton/styles/hover = SubResource("StyleBoxFlat_7hjjl")
 FillButton/styles/normal = SubResource("StyleBoxFlat_sxwih")
@@ -173,6 +203,7 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_yhfeq")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_0kida")
 RadiusPanel/base_type = &"Panel"
 RadiusPanel/styles/panel = SubResource("StyleBoxFlat_a2l2q")
+ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_470mv")
 TitleLabel/base_type = &"Label"
 TitleLabel/font_sizes/font_size = 90
 TransparentButton/base_type = &"Button"

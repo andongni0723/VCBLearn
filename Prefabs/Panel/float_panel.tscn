@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://2k7386e405r4"]
 
-[ext_resource type="Script" uid="uid://brbs7jxqyvii3" path="res://Script/UI/float_panel.gd" id="1_tcquv"]
+[ext_resource type="Script" uid="uid://brbs7jxqyvii3" path="res://Script/UI/Panel/float_panel.gd" id="1_tcquv"]
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="2_sepxq"]
 [ext_resource type="PackedScene" uid="uid://btvoij2dx6up3" path="res://Prefabs/Buttons/transparent_button.tscn" id="3_n7pm1"]
 

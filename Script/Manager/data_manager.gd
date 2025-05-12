@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH = "user://app_data.json"
-@onready var add_card_and_folder_resource: Resource = preload("res://Data/Float Panel Data/add_card_and_folder.tres")
+@onready var add_card_and_folder_resource: Resource = preload("res://Data/Float Panel Data/add_card_set_and_folder.tres")
 
 var _data: Dictionary = {}
 var _default_data := \

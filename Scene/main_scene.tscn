@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5fycktkat26v" path="res://Prefabs/Panel/create_folder.tscn" id="4_0xtjt"]
 [ext_resource type="Script" uid="uid://bhcc22s8p6nth" path="res://Script/UI/Panel/main_panel.gd" id="4_i64o6"]
 [ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="5_1d8q1"]
-[ext_resource type="PackedScene" uid="uid://bn6ku1mshl6m1" path="res://Prefabs/Panel/full_panel.tscn" id="5_k87s1"]
+[ext_resource type="PackedScene" uid="uid://doimonp5hkm7u" path="res://Prefabs/Panel/folder_panel.tscn" id="5_k87s1"]
 [ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="5_lee88"]
 [ext_resource type="Script" uid="uid://qe4iw7hcli7n" path="res://Script/Manager/ui_manager.gd" id="6_lee88"]
 [ext_resource type="PackedScene" uid="uid://cs6tc5w4oli7d" path="res://Prefabs/path_group.tscn" id="7_0xtjt"]
@@ -83,22 +83,16 @@ layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_top = 100
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Path Group" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_0xtjt")]
+[node name="Path Group" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_0xtjt")]
 layout_mode = 2
 data_save_key = "file_data_path"
 
-[node name="Delete Button" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("8_j1xvy")]
+[node name="Delete Button" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("8_j1xvy")]
 self_modulate = Color(0.598924, 0.175845, 0.130832, 1)
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
@@ -107,7 +101,7 @@ button_texture = ExtResource("9_j1xvy")
 button_text = "刪除應用暫存"
 id = "delete_app_data"
 
-[node name="cards" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="cards" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
@@ -115,11 +109,11 @@ size_flags_stretch_ratio = 8.0
 text = "單字卡"
 vertical_alignment = 1
 
-[node name="Folder Group" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Folder Group" type="VBoxContainer" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 
-[node name="folder" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group"]
+[node name="folder" type="Label" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/VBoxContainer/Folder Group"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
@@ -128,7 +122,7 @@ theme = ExtResource("1_j4qrl")
 text = "文件夾"
 vertical_alignment = 1
 
-[node name="Folder Group" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group" instance=ExtResource("10_7riyq")]
+[node name="Folder Group" parent="CanvasLayer/Control/Home Panel/VBoxContainer/ScrollContainer/VBoxContainer/Folder Group" instance=ExtResource("10_7riyq")]
 layout_mode = 2
 
 [node name="Library Panel" type="MarginContainer" parent="CanvasLayer/Control"]
@@ -136,6 +130,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -266.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -160,19 +155,13 @@ layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_top = 100
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_j4qrl")
 
-[node name="cards" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="cards" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
@@ -181,11 +170,11 @@ theme = ExtResource("1_j4qrl")
 text = "單字卡"
 vertical_alignment = 1
 
-[node name="Folder Group" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 800)
+[node name="Folder Group" type="VBoxContainer" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="folder" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group"]
+[node name="folder" type="Label" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/VBoxContainer/Folder Group"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
@@ -194,7 +183,7 @@ theme = ExtResource("1_j4qrl")
 text = "文件夾"
 vertical_alignment = 1
 
-[node name="Folder Group" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Folder Group" instance=ExtResource("10_7riyq")]
+[node name="Folder Group" parent="CanvasLayer/Control/Library Panel/VBoxContainer/ScrollContainer/VBoxContainer/Folder Group" instance=ExtResource("10_7riyq")]
 layout_mode = 2
 vertical = false
 

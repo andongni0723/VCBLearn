@@ -18,8 +18,8 @@ theme = ExtResource("1_s6d2t")
 script = ExtResource("2_u2r3h")
 vertical = true
 container = NodePath("ScrollContainer/VFlow")
-folder_button_prefab = ExtResource("1_dp4pj")
-folder_icon = ExtResource("4_3bfb3")
+button_prefab = ExtResource("1_dp4pj")
+button_icon = ExtResource("4_3bfb3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(0, 700)
@@ -41,4 +41,3 @@ vertical = true
 [node name="Card Button" parent="ScrollContainer/VFlow" instance=ExtResource("1_dp4pj")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 3

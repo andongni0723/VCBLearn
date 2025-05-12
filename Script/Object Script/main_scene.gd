@@ -41,7 +41,7 @@ func create_folder_panel():
     p.fade_in()
 
 func folder_panel(panel_name: String):
-    var p: FullPanel = UIManager.folder_panel.instantiate()
+    var p: FolderPanel = UIManager.folder_panel.instantiate()
     p.initialize(panel_name)
     ui_root.add_child(p)
     p.fade_in()
