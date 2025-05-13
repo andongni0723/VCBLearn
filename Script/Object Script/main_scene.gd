@@ -7,13 +7,18 @@ var current_panel: MainPanel
 func _enter_tree() -> void:
     GlobalSignal.footer_button_pressed.connect(_on_footer_button_pressed)
     GlobalSignal.call_create_folder_panel.connect(create_folder_panel)
+    GlobalSignal.call_create_card_set_panel.connect(create_card_set_panel)
     GlobalSignal.call_open_folder_panel.connect(folder_panel)
+    GlobalSignal.call_open_card_set.connect(card_set_panel)
+    GlobalSignal.call_add_float_panel.connect(add_float_panel)
 
 func _exit_tree() -> void:
     GlobalSignal.footer_button_pressed.disconnect(_on_footer_button_pressed)
     GlobalSignal.call_create_folder_panel.disconnect(create_folder_panel)
+    GlobalSignal.call_create_card_set_panel.disconnect(create_card_set_panel)
     GlobalSignal.call_open_folder_panel.disconnect(folder_panel)
-
+    GlobalSignal.call_open_card_set.disconnect(card_set_panel)
+    GlobalSignal.call_add_float_panel.disconnect(add_float_panel)
 
 func _ready() -> void:
     var main_panel_array := [UIManager.home_panel, UIManager.library_panel]
@@ -22,6 +27,7 @@ func _ready() -> void:
     current_panel = UIManager.home_panel
     current_panel.visible = true
 
+
 func change_panel(target: Control):
     # Pass same Panel
     if current_panel == target: return
@@ -29,22 +35,36 @@ func change_panel(target: Control):
     current_panel = target
     await current_panel.fade_in()
 
+
 func add_float_panel(target: PackedScene, data: FloatPanelResource):
     var p: FloatPanel = target.instantiate()
     ui_root.add_child(p)
     p.initialize(data)
     p.fade_in()
+    
 
 func create_folder_panel():
     var p: FloatPanel = UIManager.create_folder_panel.instantiate()
     ui_root.add_child(p)
     p.fade_in()
 
+
+func create_card_set_panel():
+    var p: FullPanel = UIManager.create_card_set_panel.instantiate()
+    ui_root.add_child(p)
+    p.fade_in()
+
+
 func folder_panel(panel_name: String):
-    var p: FolderPanel = UIManager.folder_panel.instantiate()
+    var p: FolderPanel = UIManager.folder_panel.instantiate() 
     p.initialize(panel_name)
     ui_root.add_child(p)
     p.fade_in()
+
+
+func card_set_panel(file_name: String):
+    print("file: ", file_name)
+    pass
 
 
 func _on_footer_button_pressed(id):

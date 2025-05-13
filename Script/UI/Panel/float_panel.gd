@@ -58,3 +58,5 @@ func _on_custom_button_pressed(id: String):
     match id:
         "create_folder_panel":
             GlobalSignal.call_create_folder_panel.emit()
+        "create_card_set_panel":
+            GlobalSignal.call_create_card_set_panel.emit()

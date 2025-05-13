@@ -5,6 +5,10 @@ class_name FullPanel extends BasePanel
 @export var button_parent: Control
 @export var button_array: Array[CustomButton]
 
+func _ready():
+    for b in button_array:
+        b._on_custom_button_pressed.connect(_on_custom_button_pressed)
+
 func fade_in():
     modulate.a = 1.0
     panel.position.x = panel_parent.custom_minimum_size.x
@@ -21,3 +25,5 @@ func fade_out():
     t.tween_property(panel, "position:x", panel.size.x, transition_time / 2)
     await get_tree().create_timer(transition_time).timeout
     queue_free()
+
+func _on_custom_button_pressed(_id: String): pass

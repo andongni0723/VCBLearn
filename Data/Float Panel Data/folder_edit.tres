@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="FloatPanelResource" load_steps=9 format=3 uid="uid://deapkyn407hge"]
+
+[ext_resource type="Script" uid="uid://cnlqc5x52tphx" path="res://Script/Data/button_data.gd" id="1_0aj05"]
+[ext_resource type="Texture2D" uid="uid://cynxj5bbvcfsg" path="res://Assets/other.svg" id="2_0aj05"]
+[ext_resource type="Texture2D" uid="uid://b673x436kl221" path="res://Assets/Search.svg" id="3_6iadb"]
+[ext_resource type="Script" uid="uid://jy3knfk4us3a" path="res://Script/Data/float_panel_resource.gd" id="3_oq2ng"]
+[ext_resource type="Texture2D" uid="uid://bppp3uut5jthx" path="res://Assets/Remove.svg" id="4_16yw3"]
+
+[sub_resource type="Resource" id="Resource_00cmw"]
+script = ExtResource("1_0aj05")
+texture = ExtResource("2_0aj05")
+text = "編輯"
+signal_name = "edit_name"
+metadata/_custom_type_script = "uid://cnlqc5x52tphx"
+
+[sub_resource type="Resource" id="Resource_cucrg"]
+script = ExtResource("1_0aj05")
+texture = ExtResource("3_6iadb")
+text = "分享"
+signal_name = "share_folder_and_card_set"
+metadata/_custom_type_script = "uid://cnlqc5x52tphx"
+
+[sub_resource type="Resource" id="Resource_advuu"]
+script = ExtResource("1_0aj05")
+texture = ExtResource("4_16yw3")
+text = "刪除"
+signal_name = "delete_folder"
+metadata/_custom_type_script = "uid://cnlqc5x52tphx"
+
+[resource]
+script = ExtResource("3_oq2ng")
+type = 0
+button_data = Array[ExtResource("1_0aj05")]([SubResource("Resource_00cmw"), SubResource("Resource_cucrg"), SubResource("Resource_advuu")])
+metadata/_custom_type_script = "uid://jy3knfk4us3a"

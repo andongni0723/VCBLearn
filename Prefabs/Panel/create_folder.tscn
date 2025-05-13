@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://5fycktkat26v"]
+[gd_scene load_steps=8 format=3 uid="uid://5fycktkat26v"]
 
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_g35wn"]
 [ext_resource type="Script" uid="uid://cbrb4ve51dn5v" path="res://Script/UI/Panel/create_foler_float_panel.gd" id="2_d1h51"]
 [ext_resource type="PackedScene" uid="uid://btvoij2dx6up3" path="res://Prefabs/Buttons/transparent_button.tscn" id="3_d1h51"]
 [ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="4_1ea6l"]
 [ext_resource type="PackedScene" uid="uid://m5n7pcjbwp8y" path="res://Prefabs/fill_line_edit.tscn" id="5_d1h51"]
+[ext_resource type="PackedScene" uid="uid://cu1dbq1cu0gmq" path="res://Prefabs/Buttons/mini_button.tscn" id="6_maxdd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -22,6 +23,7 @@ line_edit = NodePath("Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Line
 panel_parent = NodePath("Panel Parent")
 panel = NodePath("Panel Parent/Panel")
 button_array = [NodePath("Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Create Button")]
+transparent_button_prefab = ExtResource("3_d1h51")
 transition_time = 0.1
 
 [node name="Button" type="Button" parent="."]
@@ -88,33 +90,9 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="Create Button" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox" instance=ExtResource("3_d1h51")]
-custom_minimum_size = Vector2(173.54, 150)
+[node name="Create Button" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox" instance=ExtResource("6_maxdd")]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-button_texture = null
-button_text = "創建"
-id = "create_folder"
-
-[node name="MarginContainer" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Create Button" index="0"]
-theme_override_constants/margin_right = 0
-
-[node name="HBoxContainer" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Create Button/MarginContainer" index="0"]
-alignment = 2
-
-[node name="TextureRect" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Create Button/MarginContainer/HBoxContainer" index="0"]
-visible = false
-texture = null
-
-[node name="Label" parent="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Create Button/MarginContainer/HBoxContainer" index="1"]
-theme_override_colors/font_color = Color(0.454216, 0.468704, 1, 1)
-theme_override_font_sizes/font_size = 48
-text = "創建"
-horizontal_alignment = 2
 
 [connection signal="pressed" from="Button" to="." method="fade_out"]
 [connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/HBoxContainer/Button" to="." method="fade_out"]
 [connection signal="text_changed" from="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/LineEdit" to="." method="_on_line_edit_text_changed"]
-
-[editable path="Panel Parent/Panel/VBoxContainer/MarginContainer/VBox/Create Button"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cri7578rdlgdj"]
+[gd_scene load_steps=17 format=3 uid="uid://cri7578rdlgdj"]
 
 [ext_resource type="Script" uid="uid://d2hy6c3vi3yhi" path="res://Script/Object Script/main_scene.gd" id="1_31fxm"]
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_j4qrl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="5_1d8q1"]
 [ext_resource type="PackedScene" uid="uid://doimonp5hkm7u" path="res://Prefabs/Panel/folder_panel.tscn" id="5_k87s1"]
 [ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="5_lee88"]
+[ext_resource type="PackedScene" uid="uid://dyo07x5ixo5b4" path="res://Prefabs/Panel/create_card_set.tscn" id="6_kx01p"]
 [ext_resource type="Script" uid="uid://qe4iw7hcli7n" path="res://Script/Manager/ui_manager.gd" id="6_lee88"]
 [ext_resource type="PackedScene" uid="uid://cs6tc5w4oli7d" path="res://Prefabs/path_group.tscn" id="7_0xtjt"]
 [ext_resource type="PackedScene" uid="uid://fn467vwp5vy3" path="res://Prefabs/Buttons/fill_button.tscn" id="8_j1xvy"]
@@ -31,6 +32,7 @@ _library_panel = NodePath("../CanvasLayer/Control/Library Panel")
 _float_panel = ExtResource("8_k2rys")
 _create_folder_panel = ExtResource("4_0xtjt")
 _folder_panel = ExtResource("5_k87s1")
+_create_card_set_panel = ExtResource("6_kx01p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

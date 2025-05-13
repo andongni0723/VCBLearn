@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn6ku1mshl6m1"]
+[gd_scene load_steps=11 format=3 uid="uid://bn6ku1mshl6m1"]
 
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_n4ucf"]
 [ext_resource type="Script" uid="uid://de3d6ylijxig1" path="res://Script/UI/Panel/full_panel.gd" id="2_fvxdg"]
 [ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="3_n4ucf"]
 [ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="3_vixkf"]
 [ext_resource type="Texture2D" uid="uid://dwokewbwak1le" path="res://Assets/Folder.svg" id="4_3x54c"]
+[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="4_fryel"]
 [ext_resource type="Texture2D" uid="uid://b673x436kl221" path="res://Assets/Search.svg" id="4_vd7ih"]
 [ext_resource type="Texture2D" uid="uid://cynxj5bbvcfsg" path="res://Assets/other.svg" id="5_fryel"]
 [ext_resource type="PackedScene" uid="uid://cvm6kaihn23u3" path="res://Prefabs/card_set_group.tscn" id="8_vd7ih"]
@@ -71,26 +72,32 @@ size_flags_horizontal = 8
 theme_override_constants/separation = 50
 alignment = 2
 
-[node name="Add Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
+[node name="Add Button2" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 icon = ExtResource("3_vixkf")
 expand_icon = true
+script = ExtResource("4_fryel")
+id = "add_card_set"
 
-[node name="Search Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
+[node name="Search Button2" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 icon = ExtResource("4_vd7ih")
 expand_icon = true
+script = ExtResource("4_fryel")
+id = "search"
 
-[node name="Setting Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
+[node name="Setting Button2" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 icon = ExtResource("5_fryel")
 expand_icon = true
+script = ExtResource("4_fryel")
+id = "setting"
 
 [node name="Back Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar"]
 custom_minimum_size = Vector2(100, 100)
@@ -124,4 +131,7 @@ layout_mode = 2
 [node name="Button Parent" type="Control" parent="Panel Parent/Panel/VBoxContainer"]
 layout_mode = 2
 
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Add Button2" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Add Button2" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Search Button2" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Search Button2" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Setting Button2" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Setting Button2" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/Back Button" to="." method="fade_out"]

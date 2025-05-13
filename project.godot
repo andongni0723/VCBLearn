@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="VcbLearn"
-config/version="v0.3"
+config/version="v0.3.A"
 run/main_scene="uid://w7cetgt2vrrm"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/show_image=false

@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyo07x5ixo5b4"]
+
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_rb8xv"]
+[ext_resource type="Script" uid="uid://de3d6ylijxig1" path="res://Script/UI/Panel/full_panel.gd" id="2_iucb8"]
+[ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="3_t2cx6"]
+[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="4_ciewt"]
+[ext_resource type="PackedScene" uid="uid://m5n7pcjbwp8y" path="res://Prefabs/fill_line_edit.tscn" id="6_ciewt"]
+[ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="6_g80g6"]
+[ext_resource type="PackedScene" uid="uid://cu1dbq1cu0gmq" path="res://Prefabs/Buttons/mini_button.tscn" id="7_rb8xv"]
+[ext_resource type="PackedScene" uid="uid://cvm6kaihn23u3" path="res://Prefabs/card_set_group.tscn" id="8_5537k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[node name="Full Panel" type="Panel" node_paths=PackedStringArray("panel_parent", "panel", "button_parent")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rb8xv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_lee88")
+script = ExtResource("2_iucb8")
+panel_parent = NodePath("Panel Parent")
+panel = NodePath("Panel Parent/Panel")
+button_parent = NodePath("Panel Parent/Panel/VBoxContainer/Button Parent")
+transition_time = 0.1
+
+[node name="Panel Parent" type="Control" parent="."]
+custom_minimum_size = Vector2(1080, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Panel Parent"]
+custom_minimum_size = Vector2(1080, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+theme_type_variation = &"RadiusPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel Parent/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Nav Bar" type="Control" parent="Panel Parent/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel Parent/Panel/VBoxContainer/Nav Bar"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Create Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("3_t2cx6")
+expand_icon = true
+script = ExtResource("4_ciewt")
+id = "create"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel Parent/Panel/VBoxContainer/Nav Bar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("6_g80g6")
+expand_icon = true
+
+[node name="Label" type="Label" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer2"]
+layout_mode = 2
+text = "建立單字卡組"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel Parent/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" parent="Panel Parent/Panel/VBoxContainer/MarginContainer" instance=ExtResource("6_ciewt")]
+layout_mode = 2
+size_flags_horizontal = 1
+placeholder_text = "單字卡組名稱"
+
+[node name="Create Button" parent="Panel Parent/Panel/VBoxContainer" instance=ExtResource("7_rb8xv")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+alignment = 2
+button_text = "由 csv 導入"
+
+[node name="Card Group" parent="Panel Parent/Panel/VBoxContainer" instance=ExtResource("8_5537k")]
+layout_mode = 2
+
+[node name="Card Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Card Group"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 457.0
+grow_horizontal = 2
+mouse_filter = 1
+theme = ExtResource("1_rb8xv")
+theme_type_variation = &"OutlineButton"
+alignment = 0
+expand_icon = true
+script = ExtResource("4_ciewt")
+id = "card"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel Parent/Panel/VBoxContainer/Card Group/Card Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel Parent/Panel/VBoxContainer/Card Group/Card Button/MarginContainer"]
+layout_mode = 2
+
+[node name="LineEdit" parent="Panel Parent/Panel/VBoxContainer/Card Group/Card Button/MarginContainer/VBoxContainer" instance=ExtResource("6_ciewt")]
+layout_mode = 2
+size_flags_horizontal = 1
+placeholder_text = "英文"
+
+[node name="LineEdit2" parent="Panel Parent/Panel/VBoxContainer/Card Group/Card Button/MarginContainer/VBoxContainer" instance=ExtResource("6_ciewt")]
+layout_mode = 2
+size_flags_horizontal = 1
+placeholder_text = "中文"
+
+[node name="Button Parent" type="Control" parent="Panel Parent/Panel/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Create Button" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Create Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer2/Back Button" to="." method="fade_out"]
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Card Group/Card Button" to="Panel Parent/Panel/VBoxContainer/Card Group/Card Button" method="_on_button_pressed"]

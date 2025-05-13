@@ -15,6 +15,9 @@ class_name DataGroup extends Control
 var signal_prefix := "open_"
 var data_path := ""
 
+enum Mode { FOLDER, FILE}
+var generate_mode : Mode = Mode.FOLDER
+
 func _enter_tree() -> void:
     GlobalSignal.call_refresh_file.connect(_refresh)
 
@@ -42,13 +45,24 @@ func _generate_data_button(_data_path: String):
             dir_name = dir.get_next()
             continue
 
-        if dir.current_is_dir():
+        # Check mode and current file type, create button
+        if (
+            generate_mode == Mode.FOLDER and dir.current_is_dir()
+            or generate_mode == Mode.FILE and dir_name.get_extension() == "tres"
+        ):
             var b: CustomButton = button_prefab.instantiate()
             container.add_child(b)
-            b.initialize(button_icon, dir_name, signal_prefix + dir_name)
+            b.initialize(button_icon, titleize_snake(dir_name.get_basename()), signal_prefix + dir_name)
             b._on_custom_button_pressed.connect(_on_data_button_pressed)
         dir_name = dir.get_next()
     dir.list_dir_end()
+
+
+func titleize_snake(text: String) -> String:
+    var parts := text.split("_")
+    for i in parts.size():
+        parts[i] = parts[i].capitalize()
+    return " ".join(parts)
 
 
 func _delete_all_button():
@@ -61,7 +75,7 @@ func _refresh():
     _generate_data_button(data_path)
 
 
-func _on_data_button_pressed(id: String):
-    if not id.begins_with(signal_prefix): return
-    var folder_name := id.substr(signal_prefix.length())
-    GlobalSignal.call_open_folder_panel.emit(folder_name)
+## When button in panel pressed, call this function.
+## Override this function in child class
+func _on_data_button_pressed(_id: String):
+    assert(false, "%s must override _on_data_button_pressed()" % self)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu1dbq1cu0gmq"]
+
+[ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_n8veu"]
+[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="2_jjf86"]
+
+[node name="Create Button" type="Button" node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(173.54, 150)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("1_n8veu")
+theme_type_variation = &"TransparentButton"
+alignment = 0
+expand_icon = true
+script = ExtResource("2_jjf86")
+button_text = "創建"
+label = NodePath("Label")
+id = "create_folder"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.454216, 0.468704, 1, 1)
+text = "創建"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_button_pressed"]

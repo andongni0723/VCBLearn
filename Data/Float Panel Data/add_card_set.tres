@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FloatPanelResource" load_steps=5 format=3 uid="uid://d02xd75nkbai"]
+
+[ext_resource type="Script" uid="uid://cnlqc5x52tphx" path="res://Script/Data/button_data.gd" id="1_nn7no"]
+[ext_resource type="Texture2D" uid="uid://jhuwyni67qvq" path="res://Assets/Action Copy.svg" id="2_l7gxy"]
+[ext_resource type="Script" uid="uid://jy3knfk4us3a" path="res://Script/Data/float_panel_resource.gd" id="4_vux63"]
+
+[sub_resource type="Resource" id="Resource_00cmw"]
+script = ExtResource("1_nn7no")
+texture = ExtResource("2_l7gxy")
+text = "單字卡"
+signal_name = "create_card_panel"
+metadata/_custom_type_script = "uid://cnlqc5x52tphx"
+
+[resource]
+script = ExtResource("4_vux63")
+type = 0
+button_data = Array[ExtResource("1_nn7no")]([SubResource("Resource_00cmw")])
+metadata/_custom_type_script = "uid://jy3knfk4us3a"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://doimonp5hkm7u"]
+[gd_scene load_steps=11 format=3 uid="uid://doimonp5hkm7u"]
 
 [ext_resource type="Theme" uid="uid://86438e816syb" path="res://main_theme.tres" id="1_io716"]
 [ext_resource type="Script" uid="uid://djlnvdb58i2kv" path="res://Script/UI/Panel/folder_panel.gd" id="2_io716"]
 [ext_resource type="Texture2D" uid="uid://bqjy3umg503vq" path="res://Assets/Add.svg" id="3_wh840"]
+[ext_resource type="Script" uid="uid://5a7ylyar05xr" path="res://Script/Object Script/custom_button.gd" id="4_io716"]
 [ext_resource type="Texture2D" uid="uid://b673x436kl221" path="res://Assets/Search.svg" id="4_ulc7q"]
 [ext_resource type="Texture2D" uid="uid://cynxj5bbvcfsg" path="res://Assets/other.svg" id="5_cas3v"]
 [ext_resource type="Texture2D" uid="uid://bvdaj5rjqmp0o" path="res://Assets/Arrow Left.svg" id="6_u8efs"]
@@ -12,7 +13,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee88"]
 bg_color = Color(0, 0, 0, 0.392157)
 
-[node name="Full Panel" type="Panel" node_paths=PackedStringArray("card_group", "folder_name_label", "panel_parent", "panel")]
+[node name="Folder Panel" type="Panel" node_paths=PackedStringArray("card_group", "folder_name_label", "panel_parent", "panel", "button_array")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,7 +26,7 @@ card_group = NodePath("Panel Parent/Panel/VBoxContainer/Card Group")
 folder_name_label = NodePath("Panel Parent/Panel/VBoxContainer/MarginContainer/VBoxContainer/Folder Name Label")
 panel_parent = NodePath("Panel Parent")
 panel = NodePath("Panel Parent/Panel")
-transition_time = null
+button_array = [NodePath("Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Add Button"), NodePath("Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Search Button"), NodePath("Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Setting Button")]
 
 [node name="Panel Parent" type="Control" parent="."]
 custom_minimum_size = Vector2(1080, 50)
@@ -78,6 +79,8 @@ layout_mode = 2
 size_flags_horizontal = 0
 icon = ExtResource("3_wh840")
 expand_icon = true
+script = ExtResource("4_io716")
+id = "add_card_set"
 
 [node name="Search Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
@@ -85,6 +88,8 @@ layout_mode = 2
 size_flags_horizontal = 0
 icon = ExtResource("4_ulc7q")
 expand_icon = true
+script = ExtResource("4_io716")
+id = "search"
 
 [node name="Setting Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
@@ -92,6 +97,8 @@ layout_mode = 2
 size_flags_horizontal = 0
 icon = ExtResource("5_cas3v")
 expand_icon = true
+script = ExtResource("4_io716")
+id = "setting"
 
 [node name="Back Button" type="Button" parent="Panel Parent/Panel/VBoxContainer/Nav Bar"]
 custom_minimum_size = Vector2(100, 100)
@@ -125,4 +132,7 @@ layout_mode = 2
 [node name="Button Parent" type="Control" parent="Panel Parent/Panel/VBoxContainer"]
 layout_mode = 2
 
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Add Button" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Add Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Search Button" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Search Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Setting Button" to="Panel Parent/Panel/VBoxContainer/Nav Bar/HBoxContainer/Setting Button" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel Parent/Panel/VBoxContainer/Nav Bar/Back Button" to="." method="fade_out"]
